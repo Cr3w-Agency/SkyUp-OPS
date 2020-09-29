@@ -1,97 +1,102 @@
 html, body {
-  background-color: #FF6425;
-  width: 100%;
-  height: 100%;
+  /* height: 100%; */
   margin: 0;
   padding: 0;
-}
-
-.navbar {
-  background-color: #FF6425;
-}
-
-.navbar-logout {
-  margin-right: 50px;
-}
-
-.login-form {
-  margin: 0 auto;
-  margin-top: 200px;
-  width: 300px;
-  height: 500px;
 }
 
 .border-box {
   border: 1px solid black;
 }
 
+
 /* Dashboard */
 .dashboard {
   display: flex;
   flex-wrap: wrap;
-  max-height: 90% !important;
 }
 
 .dashboard-item {
-  flex-grow: 1;
+  flex: 1;
   max-width: 25%;
-  /* min-height: 100px; */
-  padding: 10px;
-  margin-left: 10px;
   align-self: flex-start;
-  background-color: lightblue;
+  background-color: #f8f9fd;
+  margin: 10px 10px 10px 0;
 }
 
-.dashboard-item:last-child {
-  margin-right: 10px;
+.dashboard-item:first-child {
+  margin-left: 10px;
 }
 
-.item-title {
-  text-align: center;
-  color: black;
+.basic-btn {
+  background-color: #4a90e2;
 }
-
+.basic-btn:hover {
+  background-color: #2f85eb;
+}
 .item-content {
-  display: block;
-  overflow-y: scroll;
-  max-height: 75vh;
-}
-
-.card {
-  margin-bottom: 10px;
+  overflow-y: auto;
+  max-height: 80vh;
+  padding: 10px;
 }
 
 .card-important {
-  border-left: 5px solid #DC3545;
+  border-left: 5px solid #ff6500;
 }
 
-.item-control {
-  display: flex;
-  height: 40px;  
-  margin-top: 10px;
+.add-list-btn img {
+  height: 1.5em;
+  width: 1.5em;
 }
 
-
-
-
+/* Media */
 @media (min-width: 990px) {
-  .dashboard-item:last-child {
-    margin-right: 10px;
-  }
+
 }
 
 @media (max-width: 990px) {
-  .login-form {
-    margin-top: 15px;
+  .navbar {
+    padding: 0;
   }
-  .dashboard {
-    min-height: none;
+
+  .dashboard-item {
+    max-width: 100%;
+    margin: 5px 0;
+  }
+
+  .dashboard-item:first-child {
+    margin-left: 0;
+  }
+
+  .item-content {
+    max-height: none;
   }
   .dashboard-item {
     min-width: 100%;
     margin-bottom: 10px;
   }
 }
+
+
+/* ScrollBar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  -webkit-border-radius: 10px; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 169, 169); 
+  -webkit-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4593eb; 
+  -webkit-border-radius: 10px;
+}
+
 
 /* Checkbox */
 .control {
@@ -104,11 +109,11 @@ html, body {
   cursor: pointer;
   font-size: 16px;
 }
-  .control input {
-      position: absolute;
-      z-index: -1;
-      opacity: 0;
-  }
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
 .control_indicator {
   position: absolute;
   top: 2px;
@@ -121,11 +126,11 @@ html, body {
 }
 
 .control input:checked ~ .control_indicator {
-  background: #2aa1c0;
+  background: #2f85eb;
 }
 .control:hover input:not([disabled]):checked ~ .control_indicator,
 .control input:checked:focus ~ .control_indicator {
-  background: #2aa1c0;
+  background: #2f85eb;
 }
 
 .control input:disabled ~ .control_indicator {
